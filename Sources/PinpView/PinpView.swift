@@ -70,7 +70,7 @@ final public class PinpView: UIView {
         
         exitButton.backgroundColor = .clear
         exitButton.tintColor = .darkGray
-        exitButton.setImage(#imageLiteral(resourceName: "removeAllBetsX"), for: .normal)
+        exitButton.setImage(UIImage.remove, for: .normal)
         exitButton.imageView?.backgroundColor = .clear
         exitButton.addTarget(self, action: #selector(closePinpView), for: .touchUpInside)
         
