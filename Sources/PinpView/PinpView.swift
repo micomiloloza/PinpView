@@ -14,10 +14,10 @@ protocol PinpViewControlsDelegate: AnyObject {
 }
 
 
-final class PinpView: UIView {
+final public class PinpView: UIView {
     
-    var activityIndicator: UIActivityIndicatorView!
-    var panGestureRecognizer: UIPanGestureRecognizer!
+    public var activityIndicator: UIActivityIndicatorView!
+    public var panGestureRecognizer: UIPanGestureRecognizer!
     
     private var lastLocation: CGPoint!
     private var pulloutPinpViewButton: UIButton!
@@ -27,9 +27,9 @@ final class PinpView: UIView {
     
     private var pinpViewControlsDelegate: PinpViewControlsDelegate?
     
-    typealias PulloutPinpViewButtonPositionInfo = (show: Bool, edge: ActivePanEdge)
+    public typealias PulloutPinpViewButtonPositionInfo = (show: Bool, edge: ActivePanEdge)
     
-    var pulloutPinpViewButtonPositionInfo: PulloutPinpViewButtonPositionInfo {
+    public var pulloutPinpViewButtonPositionInfo: PulloutPinpViewButtonPositionInfo {
         get {
             guard let superview = superview else { return (false, .none) }
             
@@ -43,7 +43,7 @@ final class PinpView: UIView {
         }
     }
     
-    init(frame: CGRect, indicatorColor: UIColor = .gray, childView: UIView, pulloutIcon: UIImage) {
+    public init(frame: CGRect, indicatorColor: UIColor = .gray, childView: UIView, pulloutIcon: UIImage) {
         super.init(frame: frame)
         self.childView = childView
         self.activityIndicator = UIActivityIndicatorView(style: .medium)
@@ -193,11 +193,11 @@ final class PinpView: UIView {
         
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    public override func willMove(toSuperview newSuperview: UIView?) {
         
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
     }
     
@@ -210,7 +210,7 @@ final class PinpView: UIView {
 // MARK: - Floating LMT controls
 extension PinpView: UIGestureRecognizerDelegate {
     
-    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
     
@@ -363,7 +363,7 @@ extension PinpView: UIGestureRecognizerDelegate {
 }
 
 
-enum ActivePanEdge: Int {
+public enum ActivePanEdge: Int {
     case none, left, bottom, top, right, topLeftCorner, topRightCorner, bottomLeftCorner, bottomRightCorner
     case leftClosing
     case rightClosing
@@ -371,7 +371,7 @@ enum ActivePanEdge: Int {
 
 
 extension UIImageView {
-    func rotateBy180() {
+    public func rotateBy180() {
         transform = transform.rotated(by: .pi)
     }
 }
