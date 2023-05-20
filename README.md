@@ -33,7 +33,7 @@ You can integrate the PinpView Library into your project using Swift Package Man
     ```swift
 
     dependencies: [
-        .package(url: "https://github.com/your-username/pinpView.git", from: "1.0.0")
+        .package(url: "https://github.com/your-username/PinpView.git", from: "1.0.0")
     ]
     
 ## Contributing
