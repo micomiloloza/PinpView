@@ -14,27 +14,25 @@ PinpView Library is a custom Swift class that allows you to create floating view
 
 ## Usage
 1. Create a child view that you want to display inside the floating view. Customize the child view based on your requirements.
-
 2. Instantiate the `PinpView` class with the desired frame, indicator color, child view, and pullout icon.
-
    ```swift
    let childView = UIView() // Create your custom child view
    let pulloutIcon = UIImage(named: "pulloutIcon") // Provide the pullout button icon image
    
    let pinpView = PinpView(frame: CGRect(x: 0, y: 0, width: 200, height: 200), indicatorColor: .gray, childView: childView, pulloutIcon: pulloutIcon)
-
+   ```
 3. Add the pinpView to your desired superview to make it visible on the screen.
    ```swift
     superview.addSubview(pinpView)
+   ```
     
 ## Installation
 You can integrate the PinpView Library into your project using Swift Package Manager. Simply add the following dependency to your Package.swift file:
-
-    ```swift
-
-    dependencies: [
-        .package(url: "https://github.com/your-username/PinpView.git", from: "1.0.0")
-    ]
+   ```swift
+   dependencies: [
+     .package(url: "https://github.com/micomiloloza/PinpView.git", from: "1.0.0")
+   ]
+   ```
     
 ## Contributing
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
